@@ -1,6 +1,6 @@
 name: advanced_textfield
-description: " A customizable and validated text field widget for Flutter."
-version: 0.0.4
+description: "A customizable text field widget for Flutter with built-in validation for email, password, phone, and numeric inputs. Supports forms and read-only mode."
+version: 0.0.5
 repository: https://github.com/Muneef-Nk/advanced_textfield
 
 

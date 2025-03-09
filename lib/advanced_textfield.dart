@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// A customizable text field with built-in validation for various input types.
-class ValidatedTextField extends StatelessWidget {
+class AdvancedTextfield extends StatelessWidget {
   /// The hint text displayed inside the field.
   final String hint;
 
@@ -10,7 +10,7 @@ class ValidatedTextField extends StatelessWidget {
   final TextEditingController controller;
 
   /// The controller for confirming matching input (e.g., password confirmation).
-  final TextEditingController? matchingController;
+  final TextEditingController? confirmPasswordController;
 
   /// An optional error message displayed on validation failure.
   final String? errorMessage;
@@ -37,12 +37,12 @@ class ValidatedTextField extends StatelessWidget {
   final int lines;
 
   /// Creates a validated text field widget.
-  const ValidatedTextField({
+  const AdvancedTextfield({
     super.key,
     required this.hint,
     required this.controller,
     this.errorMessage,
-    this.matchingController,
+    this.confirmPasswordController,
     this.isEmail = false,
     this.isPassword = false,
     this.isPhone = false,
@@ -102,20 +102,22 @@ class ValidatedTextField extends StatelessWidget {
                   if (isEmail &&
                       !RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
                           .hasMatch(value!)) {
-                    return 'Please enter a valid email address';
+                    return errorMessage ?? 'Please enter a valid email address';
                   }
                   if (isPassword && value!.length < 8) {
-                    return 'Password must be at least 8 characters long';
+                    return errorMessage ??
+                        'Password must be at least 8 characters long';
                   }
                   if (isPhone && !RegExp(r'^\d{10}$').hasMatch(value!)) {
-                    return 'Phone number must be exactly 10 digits';
+                    return errorMessage ??
+                        'Phone number must be exactly 10 digits';
                   }
                   if (onlyNumbers && !RegExp(r'^\d+$').hasMatch(value!)) {
-                    return 'Only numeric values are allowed';
+                    return errorMessage ?? 'Only numeric values are allowed';
                   }
-                  if (matchingController != null &&
-                      value != matchingController!.text) {
-                    return 'Passwords do not match';
+                  if (confirmPasswordController != null &&
+                      value != confirmPasswordController!.text) {
+                    return errorMessage ?? 'Passwords do not match';
                   }
                   return null;
                 },
