@@ -1,3 +1,9 @@
+## 0.0.7
+- updated `README`  
+
+
+## 0.0.6
+- **Updated changelog** to improve clarity and structure. No functional changes in this release.
 
 ## 0.0.5
 - Provided an example usage in example/ directory.
