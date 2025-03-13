@@ -85,5 +85,5 @@ If you encounter any problems, feel free to open an issue. If you think the libr
 This project is licensed under the [MIT License](LICENSE).  
 
 ## Credits  
-AdvancedTextField is developed and maintained by [GitHub](https://github.com/Muneef-Nk/advanced_textfield).
+AdvancedTextField is developed and maintained by [Muneef Nk](https://github.com/Muneef-Nk/).
 
