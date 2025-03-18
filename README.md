@@ -33,13 +33,10 @@ import 'package:advanced_textfield/advanced_textfield.dart';
 
 ```dart
 AdvancedTextfield(
-  hint: "Enter your email",
+  hintText: "Enter your email",
+  labelText:"Email"
   controller: TextEditingController(),
   isEmail: true, // Enables email validation
-  isPassword: false, // Set true for password fields
-  isPhone: false, // Set true for phone number validation
-  readOnly: false, // Set true for read-only mode
-  errorMessage: "Invalid email format",
 );
 ```
 
@@ -60,10 +57,11 @@ Form(
   child: Column(
     children: [
       AdvancedTextfield(
-        hint: "Enter your email",
+        hintText: "Enter your email",
+        labelText:"Email"
         controller: _emailController,
         isEmail: true,
-        errorMessage: "Invalid email format",
+        errorMessage: "Invalid email format", 
       ),
       ElevatedButton(
         onPressed: () {

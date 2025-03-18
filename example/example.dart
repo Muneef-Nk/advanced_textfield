@@ -50,28 +50,33 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               // Username Field
               AdvancedTextfield(
                 controller: _usernameController,
-                hint: "Enter Username",
-                isRequired: true, // Validation enabled if true
+                hintText: "Enter Username",
+                isRequired: true,
+                labelText: 'Username', // Validation enabled if true
               ),
 
               // Phone Number Field
               AdvancedTextfield(
                 controller: _phoneController,
-                hint: "Enter Phone Number",
+                hintText: "Enter Phone Number",
                 isPhone: true,
                 isRequired: true,
+                labelText: "Phone Number",
+                shadowEnabled: true,
               ),
 
               // Email Field
               AdvancedTextfield(
                 controller: _emailController,
-                hint: "Enter email address",
+                hintText: "Enter email address",
+                labelText: "Email",
               ),
 
               // Password Field
               AdvancedTextfield(
                 controller: _passwordController,
-                hint: "Enter Password",
+                hintText: "Enter Password",
+                labelText: "Password",
                 errorMessage: "Enter your password", // Optional error message
                 isPassword: true, // Hides input text
                 isRequired: true, // Validation enabled if true
@@ -80,7 +85,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               // Confirm Password Field
               AdvancedTextfield(
                 controller: _confirmPasswordController,
-                hint: "Confirm Password",
+                hintText: "Confirm Password",
+                labelText: "Confirm Password",
                 errorMessage:
                     "Passwords do not match", // Optional error message
                 isPassword: true, // Hides input text
